@@ -1,0 +1,16 @@
+[
+{
+  "modid": "ripears",
+  "name": "R.I.P. EARS",
+  "description": "The more time you spend in a SkyWars game, the louder the game gets.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["LifeKnight"],
+  "credits": "Sk1er since I think he did this but it was walking I don't remember or care",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
