@@ -46,7 +46,6 @@ public class Core {
     public static final SmartNumber.SmartFloat increaseRate = new SmartNumber.SmartFloat("Increase Rate", "Main", 0.0005F, 0.00001F, 0.01F, "The rate at which the volume increases.");
     public static final SmartBoolean exponential = new SmartBoolean("Exponential", "Main", false, "The volume will increase at an exponential rate as opposed to a constant one.");
     public static final SmartBoolean showHud = new SmartBoolean("Show HUD", "HUD", false, "Show the current volume on screen.");
-    public static final SmartBoolean gridSnapping = new SmartBoolean("Grid Snapping", "HUD", true, "Grid-snapping in the 'Edit HUD' GUI.");
     public static final SmartBoolean hudTextShadow = new SmartBoolean("HUD Text Shadow", "HUD", false, "Shadow behind text shown in the HUD.");
     public static final SmartBoolean hudTextBox = new SmartBoolean("HUD Text Box", "HUD", true, "Box surrounding text shown in the HUD.");
     public static final SmartNumber.SmartFloat hudTextBoxOpacity = new SmartNumber.SmartFloat("HUD Text Box Opacity", "HUD", 0.7F, 0F, 1F, "Opacity of the HUD Text Box.");

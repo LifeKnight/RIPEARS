@@ -193,40 +193,6 @@ public class ManipulableButton extends GuiButton {
             int newXPosition = this.originalXPosition + mouseX - this.originalMouseXPosition;
             int newYPosition = this.originalYPosition + mouseY - this.originalMouseYPosition;
 
-            if (Core.gridSnapping.getValue()) {
-                int replacementXPosition = newXPosition;
-                int replacementYPosition = newYPosition;
-                int toDrawX = Integer.MIN_VALUE;
-                int toDrawY = Integer.MIN_VALUE;
-                for (ManipulableButton manipulableButton : ManipulableGui.manipulableButtons) {
-                    if (manipulableButton != this) {
-                        if (Utilities.isWithinRange(newXPosition + this.width, manipulableButton.xPosition + manipulableButton.width, SCALE_BUTTON_SIZE)) {
-                            replacementXPosition = manipulableButton.xPosition + manipulableButton.width - this.width;
-                            toDrawX = replacementXPosition + this.width - SCALE_BUTTON_SIZE + 1;
-                        }
-                        if (Utilities.isWithinRange(newXPosition, manipulableButton.xPosition, SCALE_BUTTON_SIZE)) {
-                            replacementXPosition = manipulableButton.xPosition;
-                            toDrawX = replacementXPosition + SCALE_BUTTON_SIZE - 1;
-                        }
-                        if (Utilities.isWithinRange(newYPosition + this.height, manipulableButton.yPosition + manipulableButton.height, SCALE_BUTTON_SIZE)) {
-                            replacementYPosition = manipulableButton.yPosition + manipulableButton.height - this.height;
-                            toDrawY = replacementYPosition + this.height - SCALE_BUTTON_SIZE + 1;
-                        }
-                        if (Utilities.isWithinRange(newYPosition, manipulableButton.yPosition, SCALE_BUTTON_SIZE)) {
-                            replacementYPosition = manipulableButton.yPosition;
-                            toDrawY = replacementYPosition + SCALE_BUTTON_SIZE - 1;
-                        }
-                    }
-                    if (toDrawX != Integer.MIN_VALUE && toDrawX != 0 && toDrawX != Video.getGameWidth())
-                        Render.drawVerticalLine(toDrawX, 0, Video.getGameHeight(), Color.RED, 255F, 1);
-
-                    if (toDrawY != Integer.MIN_VALUE && toDrawY != 0 && toDrawY != Video.getGameHeight())
-                        Render.drawHorizontalLine(toDrawY, 0, Video.getGameWidth(), Color.RED, 255F, 1);
-                }
-                newXPosition = replacementXPosition;
-                newYPosition = replacementYPosition;
-            }
-
             int xIterations = 0;
             if (newXPosition != this.xPosition) {
                 int toAddX = newXPosition > this.getManipulableXPosition() ? -1 : 1;
